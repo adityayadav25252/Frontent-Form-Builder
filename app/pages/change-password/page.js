@@ -14,7 +14,7 @@ export default function ChangePasswordPage() {
     newPassword: "",
     confirmPassword: "",
   });
-
+const PUBLIC_URL = process.env.NEXT_PUBLIC_PUBLIC_URL;
   const handleChange = (e) => {
     console.log("Input Changed:", e.target.name, e.target.value); // Debug log
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -42,7 +42,7 @@ export default function ChangePasswordPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:4000/api/auth/changePassword",
+        `${PUBLIC_URL}/auth/changePassword`,
         {
           method: "POST",
           headers: {

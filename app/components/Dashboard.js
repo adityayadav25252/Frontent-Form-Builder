@@ -9,11 +9,11 @@ export default function Dashboard() {
   const [selectedForm, setSelectedForm] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
-
+const PUBLIC_URL=process.env.NEXT_PUBLIC_PUBLIC_URL;
   useEffect(() => {
     const fetchResponses = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/form");
+        const res = await fetch(`${PUBLIC_URL}/form`);
         if (!res.ok) throw new Error("Failed to fetch forms");
 
         const data = await res.json();
