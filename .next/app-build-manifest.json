@@ -11,15 +11,25 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/pages/allpage/page": [
+    "/pages/register/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pages/allpage/page.js"
+      "static/chunks/app/pages/register/page.js"
     ],
     "/pages/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/pages/login/page.js"
+    ],
+    "/pages/allpage/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pages/allpage/page.js"
+    ],
+    "/pages/form/[formId]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pages/form/[formId]/page.js"
     ],
     "/pages/responses/[formId]/page": [
       "static/chunks/webpack.js",
