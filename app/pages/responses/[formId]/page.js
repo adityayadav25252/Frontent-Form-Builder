@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 export default function ResponsesPage({ params }) {
-  const { formId } = params;  // 👈 dynamic param
+  const { formId } = params; // 👈 dynamic param
   const [responses, setResponses] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -11,8 +11,15 @@ export default function ResponsesPage({ params }) {
 
     const fetchData = async () => {
       try {
+        const token = localStorage.getItem("authaToken"); 
         const res = await fetch(
-          `http://localhost:4000/api/form/getDataByFromIdResponses/${formId}`
+          `http://localhost:4000/api/form/getDataByFromIdResponses/${formId}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`, 
+            },
+          }
         );
         const data = await res.json();
         setResponses(data.data || []);

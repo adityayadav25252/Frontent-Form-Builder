@@ -178,7 +178,7 @@ export default function Dashboard() {
 
                   <button
                     className="btn btn-sm btn-secondary"
-                    onClick={() => router.push(`/responses/${res.formId}`)}
+                    onClick={() => router.push(`/pages/responses/${res.formId}`)}
 
                   >
                     <i className="fas fa-book"></i> Responses
