@@ -12,7 +12,7 @@
     const [currentFieldId, setCurrentFieldId] = useState(null);
     const [isPreviewModalOpen, setIsPreviewModalOpen] = useState(false);
     const [isLinkModalOpen, setIsLinkModalOpen] = useState(false);
-
+const PUBLIC_URL=process.env.NEXT_PUBLIC_PUBLIC_URL;
     useEffect(() => {
       if (!document.querySelector("#font-awesome")) {
         const link = document.createElement("link");
@@ -150,7 +150,7 @@
 
       try {
         const response = await fetch(
-          "http://localhost:4000/api/form/formsCreate",
+          `${PUBLIC_URL}/form/formsCreate`,
           {
             method: "POST",
             headers: {

@@ -11,7 +11,8 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({});
-
+const PUBLIC_URL = process.env.NEXT_PUBLIC_PUBLIC_URL || '';
+console.log("<---PUBLIC_URL--->",PUBLIC_URL);
   // input change
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,7 +41,7 @@ export default function LoginPage() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:4000/api/auth/login", {
+      const response = await fetch(`${PUBLIC_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

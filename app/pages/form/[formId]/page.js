@@ -8,11 +8,11 @@ export default function PublicFormPage() {
   const [formData, setFormData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [responses, setResponses] = useState({});
-
+const PUBLIC_URL = process.env.NEXT_PUBLIC_PUBLIC_URL;
   useEffect(() => {
     const fetchForm = async () => {
       try {
-        const res = await fetch(`http://localhost:4000/api/form/${formId}`);
+        const res = await fetch(`${PUBLIC_URL}/form/${formId}`);
         if (!res.ok) throw new Error("Form not found");
         const data = await res.json();
         setFormData(data);
@@ -44,7 +44,7 @@ export default function PublicFormPage() {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://localhost:4000/api/form/formsResponseSubmit", {
+    const res = await fetch(`${PUBLIC_URL}/form/formsResponseSubmit`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

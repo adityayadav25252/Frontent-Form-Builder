@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function ResetPasswordPage() {
   const { token } = useParams();
   const router = useRouter();
-
+const PUBLIC_URL = process.env.NEXT_PUBLIC_PUBLIC_URL;
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -23,7 +23,7 @@ export default function ResetPasswordPage() {
     const newPassword = password;
 
     try {
-      const res = await fetch("http://localhost:4000/api/auth/resetPassword", {
+      const res = await fetch(`${PUBLIC_URL}/auth/resetPassword`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token, newPassword }),

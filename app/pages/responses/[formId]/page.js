@@ -8,7 +8,7 @@ export default function ResponsesPage({ params }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
-
+const PUBLIC_URL = process.env.NEXT_PUBLIC_PUBLIC_URL;
   useEffect(() => {
     if (!formId) return;
 
@@ -22,7 +22,7 @@ export default function ResponsesPage({ params }) {
         }
 
         const res = await fetch(
-          `http://localhost:4000/api/form/getDataByFromIdResponses/${formId}`,
+          `${PUBLIC_URL}/form/getDataByFromIdResponses/${formId}`,
           {
             method: "GET",
             headers: {

@@ -19,7 +19,7 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({});
-
+const PUBLIC_URL = process.env.NEXT_PUBLIC_PUBLIC_URL;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -66,7 +66,7 @@ export default function RegisterPage() {
     try {
       console.log("Sending data:", formData);
 
-      const response = await fetch("http://localhost:4000/api/user/register", {
+      const response = await fetch(`${PUBLIC_URL}/user/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

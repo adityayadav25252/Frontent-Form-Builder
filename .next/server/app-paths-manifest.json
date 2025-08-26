@@ -1,8 +1,3 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
-  "/pages/register/page": "app/pages/register/page.js",
-  "/pages/allpage/page": "app/pages/allpage/page.js",
-  "/pages/form/[formId]/page": "app/pages/form/[formId]/page.js",
-  "/pages/responses/[formId]/page": "app/pages/responses/[formId]/page.js"
+  "/pages/allpage/page": "app/pages/allpage/page.js"
 }
